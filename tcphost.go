@@ -58,8 +58,8 @@ func RunListener(address string, port string, received chan<- string) {
 
 }
 
-func RunSender(address string, port string) net.Conn {
+func RunSender(address string, port string) {
 
 	fmt.Println("New Sender launched at " + address + ":" + port)
-	return
+
 }
