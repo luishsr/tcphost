@@ -6,12 +6,13 @@ import (
 	"net"
 )
 
-func RunListener(address string, port string, received chan<- string) {
+// Opens a TCP connection and listen for incoming messages
+func RunListener(port string, received chan<- string) {
 
-	fmt.Println("New Listener launched at " + address + ":" + port)
+	fmt.Println("New Listener launched - Port " + port)
 
 	// Create a listener
-	l, err := net.Listen("tcp", ":9000")
+	l, err := net.Listen("tcp", port)
 	if err != nil {
 		log.Fatalf("Listener returned: %s", err)
 	}
